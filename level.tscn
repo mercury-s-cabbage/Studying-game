@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dxs8ba2irwp0q"]
+[gd_scene load_steps=9 format=4 uid="uid://dxs8ba2irwp0q"]
 
 [ext_resource type="PackedScene" uid="uid://b3o7i301m6hh2" path="res://player/player.tscn" id="1_1ainy"]
-[ext_resource type="Texture2D" uid="uid://de8vcoda4yo55" path="res://oak_woods_v1.0/oak_woods_v1.0/background/background_layer_1.png" id="4_1ainy"]
-[ext_resource type="Texture2D" uid="uid://ckpl0ji3ktfoy" path="res://oak_woods_v1.0/oak_woods_v1.0/background/background_layer_2.png" id="5_n6hdu"]
-[ext_resource type="Texture2D" uid="uid://crj1oy47te4do" path="res://oak_woods_v1.0/oak_woods_v1.0/oak_woods_tileset.png" id="6_2orkt"]
-[ext_resource type="Texture2D" uid="uid://ycg1apwre58l" path="res://oak_woods_v1.0/oak_woods_v1.0/background/background_layer_3.png" id="6_km5ld"]
+[ext_resource type="Texture2D" uid="uid://de8vcoda4yo55" path="res://presets/oak_woods_v1.0/oak_woods_v1.0/background/background_layer_1.png" id="4_1ainy"]
+[ext_resource type="Texture2D" uid="uid://ckpl0ji3ktfoy" path="res://presets/oak_woods_v1.0/oak_woods_v1.0/background/background_layer_2.png" id="5_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://dfxcn2x4rfl8y" path="res://mobs/skeleton.tscn" id="6_1ainy"]
+[ext_resource type="Texture2D" uid="uid://crj1oy47te4do" path="res://presets/oak_woods_v1.0/oak_woods_v1.0/oak_woods_tileset.png" id="6_2orkt"]
+[ext_resource type="Texture2D" uid="uid://ycg1apwre58l" path="res://presets/oak_woods_v1.0/oak_woods_v1.0/background/background_layer_3.png" id="6_km5ld"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aicyk"]
 texture = ExtResource("6_2orkt")
@@ -451,9 +452,6 @@ sources/0 = SubResource("TileSetAtlasSource_aicyk")
 
 [node name="level" type="Node2D"]
 
-[node name="player" parent="." instance=ExtResource("1_1ainy")]
-position = Vector2(120, 472)
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 physics_interpolation_mode = 1
 position = Vector2(-24, 22)
@@ -488,3 +486,13 @@ motion_mirroring = Vector2(1144, 0)
 position = Vector2(572, 321)
 scale = Vector2(3.575, 3.56667)
 texture = ExtResource("6_km5ld")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="player" parent="Player" instance=ExtResource("1_1ainy")]
+position = Vector2(120, 472)
+
+[node name="Mobs" type="Node2D" parent="."]
+
+[node name="Skeleton" parent="Mobs" instance=ExtResource("6_1ainy")]
+position = Vector2(392, 600)

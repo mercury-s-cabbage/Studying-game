@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://b3o7i301m6hh2"]
 
-[ext_resource type="Texture2D" uid="uid://damor88my2u8u" path="res://oak_woods_v1.0/oak_woods_v1.0/character/char_blue.png" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://damor88my2u8u" path="res://presets/oak_woods_v1.0/oak_woods_v1.0/character/char_blue.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://cvb3nxcarj0w5" path="res://player/player.gd" id="1_rkbax"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sh265"]

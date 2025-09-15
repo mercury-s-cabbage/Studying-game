@@ -208,7 +208,7 @@ scale = Vector2(0.64, 0.64)
 sprite_frames = SubResource("SpriteFrames_427lw")
 animation = &"fight"
 autoplay = "idle"
-frame_progress = 0.786994
+frame_progress = 0.426523
 
 [node name="Detector" type="Area2D" parent="."]
 visible = false

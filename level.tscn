@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dxs8ba2irwp0q"]
+[gd_scene load_steps=12 format=4 uid="uid://dxs8ba2irwp0q"]
 
 [ext_resource type="PackedScene" uid="uid://b3o7i301m6hh2" path="res://player/player.tscn" id="1_1ainy"]
 [ext_resource type="Texture2D" uid="uid://de8vcoda4yo55" path="res://presets/oak_woods_v1.0/oak_woods_v1.0/background/background_layer_1.png" id="4_1ainy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dfxcn2x4rfl8y" path="res://mobs/skeleton.tscn" id="6_1ainy"]
 [ext_resource type="Texture2D" uid="uid://crj1oy47te4do" path="res://presets/oak_woods_v1.0/oak_woods_v1.0/oak_woods_tileset.png" id="6_2orkt"]
 [ext_resource type="Texture2D" uid="uid://ycg1apwre58l" path="res://presets/oak_woods_v1.0/oak_woods_v1.0/background/background_layer_3.png" id="6_km5ld"]
+[ext_resource type="PackedScene" uid="uid://re52ptmor0y6" path="res://collectables/gold.tscn" id="7_n6hdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aicyk"]
 texture = ExtResource("6_2orkt")
@@ -464,6 +465,20 @@ func _process(delta: float) -> void:
 	text = \"HP = \" + str($\"../../Player/player\".health)
 "
 
+[sub_resource type="GDScript" id="GDScript_n6hdu"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	text = \"Gold = \" + str($\"../../Player/player\".gold)
+"
+
 [node name="level" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -534,3 +549,23 @@ offset_bottom = 14.8
 theme_override_font_sizes/font_size = 30
 text = "HP"
 script = SubResource("GDScript_1ainy")
+
+[node name="Label 2" type="Label" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 56.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 30
+text = "Coins"
+script = SubResource("GDScript_n6hdu")
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Gold" parent="Coins" instance=ExtResource("7_n6hdu")]
+position = Vector2(160, 608)
+
+[node name="Gold2" parent="Coins" instance=ExtResource("7_n6hdu")]
+position = Vector2(192, 608)
+
+[node name="Gold3" parent="Coins" instance=ExtResource("7_n6hdu")]
+position = Vector2(224, 608)
